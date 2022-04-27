@@ -1,0 +1,21 @@
+<h1>Classrooms</h1>
+		<p>The following classrooms are being utilized this term:</p>
+		<table id='dashboard' name='dashboard'>
+			<thead>
+				<tr>
+					<th>Room Number</th>
+					<th>Location</th>
+					<th>Capacity</th>
+				</tr>
+			</thead>
+			<tbody>
+                <% @rooms.each do |room| %>
+                    <tr>
+                        <td><span> <%= link_to room.number, room %></span></td>
+                        <td><span> <%= room.location %> </span></td>
+                        <td><span> <%= room.capacity %> </span></td>
+                    </tr>
+                <% end %>
+			</tbody>
+		</table>
+<%= link_to "Add New Room", new_room_path %>

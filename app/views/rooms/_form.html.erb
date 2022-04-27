@@ -1,0 +1,29 @@
+<%= form_with model: @room do |form| %>
+  <div>
+    <%= form.label :number %><br>
+    <%= form.text_field :number %>
+    <% @room.errors.full_messages_for(:number).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :location %><br>
+    <%= form.text_area :location %>
+    <% @room.errors.full_messages_for(:location).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :capacity %><br>
+    <%= form.number_field :capacity %>
+    <% @room.errors.full_messages_for(:capacity).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

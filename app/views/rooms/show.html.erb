@@ -1,0 +1,14 @@
+<h1>Classroom <%= @room.number %></h1>
+
+<p>Location: <%= @room.location %></p>
+<p>Capacity: <%= @room.capacity %></p>
+<p><span>
+        <%= link_to "Edit", edit_room_path(@room) %>
+    </span>
+   <span>
+        <%= link_to "Destroy", room_path(@room), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure to delete?"
+                  } %>
+    </span>
+</p>
